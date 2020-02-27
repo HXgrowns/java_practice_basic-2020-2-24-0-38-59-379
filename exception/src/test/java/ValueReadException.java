@@ -1,17 +1,36 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ValueReadException extends RuntimeException {
+    private String message;
+    private Throwable cause;
 
-  public ValueReadException(String message) {
+    public ValueReadException(String message) {
 
-    //TODO: change the code to pass the test
+        //TODO: change the code to pass the test
+        this.message = message;
+    }
 
-    throw new NotImplementedException();
-  }
+    public ValueReadException(String message, Throwable cause) {
+        //TODO: change the code to pass the test
+        this.message = message;
+        this.cause = cause;
+    }
 
-  public ValueReadException(String message, Throwable cause) {
-    //TODO: change the code to pass the test
+    @Override
+    public String getMessage() {
+        return message;
+    }
 
-    throw new NotImplementedException();
-  }
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public Throwable getCause() {
+        return cause;
+    }
+
+    public void setCause(Throwable cause) {
+        this.cause = cause;
+    }
 }
